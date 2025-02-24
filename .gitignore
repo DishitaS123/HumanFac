@@ -3,3 +3,4 @@ venv/
 
 # Ignore all JSON files
 *.json
+*.DS_Store
