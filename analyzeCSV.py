@@ -1,23 +1,7 @@
-import pandas as pd
-import pandas as pd
+# Count the number of lines in the CSV file
+file_path = 'HumanFac/Datasets/Dataframe_Combined_Wrangled.csv'
 
-def copy_first_5_rows(input_file, output_file):
-    """Reads the first 5 rows of a CSV and writes them to a new CSV."""
-    try:
-        # Read the first 5 rows into a pandas DataFrame
-        df = pd.read_csv(input_file, nrows=5)
+with open(file_path, 'r') as file:
+    line_count = sum(1 for line in file) - 1  # Subtract 1 to exclude the header
 
-        # Write the DataFrame to a new CSV file
-        df.to_csv(output_file, index=False)  # index=False prevents writing row indices
-
-        print(f"Successfully copied the first 5 rows to {output_file}")
-
-    except FileNotFoundError:
-        print(f"Error: Input file '{input_file}' not found.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-# Example usage:
-input_csv = 'HumanFac/Datasets/Dataframe_Wrangled_part1.csv'  # Replace with your input file path
-output_csv = 'output.csv' # Replace with your output file path
-copy_first_5_rows(input_csv, output_csv)
+print(f'Number of rows: {line_count}')
