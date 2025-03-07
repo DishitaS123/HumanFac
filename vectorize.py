@@ -30,21 +30,21 @@ def vectorize_text(text):
     return aggregated_embedding
 
 # Read the CSV file
-input_csv_path = 'Datasets/Dataframe_Wrangled_NoDuplicates.csv'  # Replace with your input CSV file path
+input_csv_path = 'Datasets/Sample_Foreign_Language_Entry_Split.csv'  # Replace with your input CSV file path
 df = pd.read_csv(input_csv_path)
 
 # Open the output CSV file in write mode
-output_csv_path = 'Datasets/BERT_Output.csv'  # Replace with your output CSV file path
+output_csv_path = 'Datasets/BERT_Output_Split.csv'  # Replace with your output CSV file path
 with open(output_csv_path, mode='w', newline='') as file:
     writer = csv.writer(file)
     # Write the header
-    writer.writerow(['original_text', 'vectorized'])
+    writer.writerow(['first_col', 'vectorized'])
 
     # Process each row and write to the output CSV file
     for index, row in df.iterrows():
-        original_text = row[1]
-        vectorized = vectorize_text(original_text)
-        writer.writerow([original_text, vectorized.tolist()])
+        first_col = row[0]
+        vectorized_cols = [vectorize_text(str(col)) for col in row[1:]]
+        writer.writerow([first_col] + [vec.tolist() for vec in vectorized_cols])
         print(f'Processed row {index + 1}/{len(df)}')
 
 print("Processing complete. Output saved to:", output_csv_path)
