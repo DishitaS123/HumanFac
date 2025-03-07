@@ -10,11 +10,13 @@ def pull_from_JSON(filename):
         for text in conversation["conversations"]:
             if '/code' in text['value']:
                 filtered_list.append(conversation)
+                break 
+             
     return filtered_list
 
 #call function
-file_1 = pull_from_JSON('sg_90k_part1.json')
-file_2 = pull_from_JSON('sg_90k_part2.json')
+file_1 = pull_from_JSON('/Users/dishita/Desktop/HumanFac_Data/sg_90k_part1.json')
+file_2 = pull_from_JSON('/Users/dishita/Desktop/HumanFac_Data/sg_90k_part2.json')
 
 #concantenate lists 
 combined = file_1 + file_2
