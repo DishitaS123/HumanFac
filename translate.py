@@ -3,6 +3,7 @@ import csv
 import re
 import unicodedata
 import time
+import random
 from googletrans import Translator
 import asyncio
 
@@ -17,6 +18,9 @@ def clean_text(text):
 
 # Asynchronous function to translate text to English
 async def translate_to_english(text):
+    delay = random.uniform(0, 1)
+    time.sleep(delay)
+    print(f"Sleeping for {delay} seconds")
     translator = Translator()
     translated = await translator.translate(text, dest='en')
     return translated.text
@@ -31,14 +35,16 @@ async def translate_to_english(text):
 def split_text(text):
     text = clean_text(text)
     # Use regular expression to split based on 'from': 'human' or 'from': 'gpt'
-    parts = re.split(r"(?=\{'from': 'human',|\{'from': 'gpt',)", text)
+    inital_parts = re.split(r"(?=\{'from': 'human',|\{'from': 'gpt',)", text)
     # Filter out empty strings
     parts = []
+    print(f"{len(inital_parts)} parts in intial split")
     for part in re.split(r"(?=\{'from': 'human',|\{'from': 'gpt',)", text):
         if part:
             chunks = []
             if(len(part) > 5000):
                 chunks = [part[i:i+5000] for i in range(0, len(part), 5000)]
+                print(f"splitting into {len(chunks)} chunks")
             else:
                 chunks = [part]
 
@@ -56,6 +62,7 @@ def split_text(text):
 def process_and_translate_row(row):
     first_col = row[0]
     translated_texts = []
+    print(f"Splitting row into {len(row[1:])} parts")
     for col in row[1:]:
         split_texts = split_text(str(col))
         translated_texts.append(' '.join(split_texts))
