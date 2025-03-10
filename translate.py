@@ -2,6 +2,7 @@ import pandas as pd
 import csv
 import re
 import unicodedata
+import time
 from googletrans import Translator
 import asyncio
 
@@ -35,6 +36,7 @@ def split_text(text):
     parts = []
     for part in re.split(r"(?=\{'from': 'human',|\{'from': 'gpt',)", text):
         if part:
+            time.sleep(30) #30 second pause
             translated_part = asyncio.run(translate_to_english(part))
             parts.append(translated_part)
     return parts
@@ -52,7 +54,7 @@ def split_and_save_csv(input_csv_path, output_csv_path):
     df = pd.read_csv(input_csv_path)
 
     # Open the output CSV file in write mode
-    with open(output_csv_path, mode='w', newline='') as file:
+    with open(output_csv_path, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         # Write the header
         header = ['first_col'] + [f'vectorized_col_{i}' for i in range(1, len(df.columns))]
