@@ -6,6 +6,7 @@ import unicodedata
 import time
 import random
 from googletrans import Translator
+from langdetect import detect
 import asyncio
 
 
@@ -66,11 +67,21 @@ def split_text(text):
 def process_and_translate_row(row):
     first_col = row[0]
     translated_texts = []
-    # print(f"Splitting row into {len(row[1:])} parts")
-    for col in row[1:]:
-        split_texts = split_text(str(col))
-        translated_texts.append(' '.join(split_texts))
-    return [first_col] + translated_texts
+    if eliminate_english(row[1][30:]) == True:
+        print("Non-English text detected")
+        # print(f"Splitting row into {len(row[1:])} parts")
+        for col in row[1:]:
+            split_texts = split_text(str(col))
+            translated_texts.append(' '.join(split_texts))
+        return [first_col] + translated_texts
+    else:
+        print("English text detected")
+        untranslated_tesxts = []
+        for col in row[1:]:
+            split_texts = split_text(str(col))
+            untranslated_tesxts.append(' '.join(split_texts))
+        return [first_col] + untranslated_tesxts
+
 
 def split_and_save_csv(input_csv_path, output_csv_path):
     df = pd.read_csv(input_csv_path)
@@ -90,25 +101,13 @@ def split_and_save_csv(input_csv_path, output_csv_path):
 
     print("Processing complete. Output saved to:", output_csv_path)
 
-def eliminate_english(input_csv_path, elim_output_path):
-    df = pd.read_csv(input_csv_path)
-
-    # parse conversations
-    text_list = []
-    text_arrays = []
-    for conversation in df["conversations"]:
-        text = ""
-        text_arr = []
-        parsed_conversation = eval(conversation)
-        for dialogue in parsed_conversation:
-            text += dialogue["value"] + " "
-            text_arr.append(dialogue["value"])
-        text_list.append(text)
-        text_arrays.append(text_arr)
-
-    # create column with the conversation text
-    df["text"] = text_list
-    df["values"] = text_arrays
+def eliminate_english(text):
+    language = detect(text)
+    if language != 'en':
+        return True
+    else:
+        return False
+    
 
 input_csv_path = 'Datasets/Dataframe_Wrangled_NoDuplicates.csv'
 output_csv_path = 'Datasets/NoDuplicates_Translated.csv'
