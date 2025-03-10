@@ -1,6 +1,7 @@
 import pandas as pd
 import csv
 import re
+import os
 import unicodedata
 import time
 import random
@@ -18,9 +19,6 @@ def clean_text(text):
 
 # Asynchronous function to translate text to English
 async def translate_to_english(text):
-    delay = random.uniform(0, 1)
-    time.sleep(delay)
-    print(f"Sleeping for {delay} seconds")
     translator = Translator()
     translated = await translator.translate(text, dest='en')
     return translated.text
@@ -86,8 +84,13 @@ def split_and_save_csv(input_csv_path, output_csv_path):
 
     print("Processing complete. Output saved to:", output_csv_path)
 
-input_csv_path = 'Datasets/Dataframe_Wrangled_NoDuplicates.csv'
-output_csv_path = 'Datasets/NoDuplicates_Translated.csv'
-split_and_save_csv(input_csv_path, output_csv_path)
+# input_csv_path = 'Datasets/Dataframe_Wrangled_NoDuplicates.csv'
+# output_csv_path = 'Datasets/NoDuplicates_Translated.csv'
+# split_and_save_csv(input_csv_path, output_csv_path)
 
-
+for file in os.listdir('Datasets/Split_CSV'):
+    input_csv_path = f'Datasets/Split_CSV/{file}'
+    output_csv_path = f'Datasets/Split_CSV_Translated/{file}'
+    split_and_save_csv(input_csv_path, output_csv_path)
+    time.sleep(60)
+    print(f"Sleeping for {60} seconds")
