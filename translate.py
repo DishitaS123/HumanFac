@@ -1,4 +1,5 @@
 import pandas as pd
+import csv
 import re
 import unicodedata
 from googletrans import Translator
@@ -38,34 +39,32 @@ def split_text(text):
             parts.append(translated_part)
     return parts
 
+# Asynchronous function to process and translate each row
+def process_and_translate_row(row):
+    first_col = row[0]
+    translated_texts = []
+    for col in row[1:]:
+        split_texts = split_text(str(col))
+        translated_texts.append(' '.join(split_texts))
+    return [first_col] + translated_texts
+
 def split_and_save_csv(input_csv_path, output_csv_path):
     df = pd.read_csv(input_csv_path)
 
-    # Apply the split_text function to the second column
-    df['split_text'] = df.iloc[:, 1].apply(split_text)
+    # Open the output CSV file in write mode
+    with open(output_csv_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        # Write the header
+        header = ['first_col'] + [f'vectorized_col_{i}' for i in range(1, len(df.columns))]
+        writer.writerow(header)
 
-    print(df['split_text'].head())
+        # Process each row and write to the output CSV file
+        for index, row in df.iterrows():
+            translated_row = process_and_translate_row(row)
+            writer.writerow(translated_row)
+            print(f'Processed row {index + 1}/{len(df)}')
 
-    # Create a new DataFrame to store the results
-    split_df = pd.DataFrame()
-
-    # Add the key column
-    split_df['Key'] = df.iloc[:, 0]
-
-    print(split_df.head())
-
-    # Add the split text columns
-    split_text_columns = pd.DataFrame(df['split_text'])
-
-    print(split_text_columns)
-
-    
-    split_df = pd.concat([split_df, split_text_columns], axis=1)
-
-    # Save the new DataFrame to a new CSV file
-    split_df.to_csv(output_csv_path, index=False)
-
-    print("Splitting into conversations complete. Output saved to:", output_csv_path)
+    print("Processing complete. Output saved to:", output_csv_path)
 
 input_csv_path = 'Datasets/Dataframe_Wrangled_NoDuplicates.csv'
 output_csv_path = 'Datasets/NoDuplicates_Translated.csv'
