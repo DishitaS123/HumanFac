@@ -36,9 +36,20 @@ def split_text(text):
     parts = []
     for part in re.split(r"(?=\{'from': 'human',|\{'from': 'gpt',)", text):
         if part:
-            time.sleep(30) #30 second pause
-            translated_part = asyncio.run(translate_to_english(part))
-            parts.append(translated_part)
+            chunks = []
+            if(len(part) > 5000):
+                chunks = [part[i:i+5000] for i in range(0, len(part), 5000)]
+            else:
+                chunks = [part]
+
+            translated_result = ""
+
+            for chunk in chunks:
+                translated_chunk = asyncio.run(translate_to_english(chunk))
+                translated_result += translated_chunk
+            #time.sleep(30) #30 second pause
+            # translated_part = asyncio.run(translate_to_english(part))
+            parts.append(translated_result)
     return parts
 
 # Asynchronous function to process and translate each row
