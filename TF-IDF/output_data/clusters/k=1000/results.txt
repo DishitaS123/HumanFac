@@ -1,0 +1,55 @@
+Word: vulnerability
+  Cluster 377: 52 occurrences
+  Cluster 650: 46 occurrences
+  Cluster 345: 45 occurrences
+  Cluster 937: 45 occurrences
+  Cluster 65: 43 occurrences
+  Cluster 346: 38 occurrences
+  Cluster 135: 33 occurrences
+  Cluster 870: 33 occurrences
+  Cluster 317: 31 occurrences
+  Cluster 670: 24 occurrences
+Word: security
+  Cluster 586: 686 occurrences
+  Cluster 188: 631 occurrences
+  Cluster 239: 557 occurrences
+  Cluster 763: 530 occurrences
+  Cluster 853: 453 occurrences
+  Cluster 45: 451 occurrences
+  Cluster 531: 428 occurrences
+  Cluster 67: 409 occurrences
+  Cluster 620: 349 occurrences
+  Cluster 226: 340 occurrences
+Word: secure
+  Cluster 586: 506 occurrences
+  Cluster 408: 215 occurrences
+  Cluster 105: 198 occurrences
+  Cluster 620: 181 occurrences
+  Cluster 383: 180 occurrences
+  Cluster 915: 175 occurrences
+  Cluster 354: 173 occurrences
+  Cluster 531: 162 occurrences
+  Cluster 732: 139 occurrences
+  Cluster 937: 137 occurrences
+Word: insecure
+  Cluster 105: 55 occurrences
+  Cluster 346: 35 occurrences
+  Cluster 345: 16 occurrences
+  Cluster 404: 16 occurrences
+  Cluster 669: 16 occurrences
+  Cluster 377: 10 occurrences
+  Cluster 574: 9 occurrences
+  Cluster 405: 8 occurrences
+  Cluster 408: 7 occurrences
+  Cluster 456: 7 occurrences
+Top 10 clusters by appearance count:
+Cluster 377: 2 appearances
+Cluster 345: 2 appearances
+Cluster 937: 2 appearances
+Cluster 346: 2 appearances
+Cluster 586: 2 appearances
+Cluster 531: 2 appearances
+Cluster 620: 2 appearances
+Cluster 408: 2 appearances
+Cluster 105: 2 appearances
+Cluster 650: 1 appearances

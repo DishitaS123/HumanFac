@@ -1,0 +1,55 @@
+Word: vulnerability
+  Cluster 5: 278 occurrences
+  Cluster 7: 162 occurrences
+  Cluster 0: 112 occurrences
+  Cluster 4: 89 occurrences
+  Cluster 3: 78 occurrences
+  Cluster 6: 71 occurrences
+  Cluster 1: 69 occurrences
+  Cluster 9: 17 occurrences
+  Cluster 8: 14 occurrences
+  Cluster 2: 12 occurrences
+Word: security
+  Cluster 5: 4988 occurrences
+  Cluster 0: 3647 occurrences
+  Cluster 4: 3050 occurrences
+  Cluster 7: 1900 occurrences
+  Cluster 9: 1865 occurrences
+  Cluster 6: 1802 occurrences
+  Cluster 3: 1277 occurrences
+  Cluster 1: 838 occurrences
+  Cluster 8: 228 occurrences
+  Cluster 2: 133 occurrences
+Word: secure
+  Cluster 5: 2492 occurrences
+  Cluster 0: 1909 occurrences
+  Cluster 4: 1160 occurrences
+  Cluster 7: 772 occurrences
+  Cluster 9: 752 occurrences
+  Cluster 6: 719 occurrences
+  Cluster 1: 399 occurrences
+  Cluster 3: 302 occurrences
+  Cluster 8: 131 occurrences
+  Cluster 2: 54 occurrences
+Word: insecure
+  Cluster 1: 70 occurrences
+  Cluster 5: 68 occurrences
+  Cluster 0: 51 occurrences
+  Cluster 6: 41 occurrences
+  Cluster 7: 28 occurrences
+  Cluster 4: 24 occurrences
+  Cluster 8: 11 occurrences
+  Cluster 9: 11 occurrences
+  Cluster 3: 2 occurrences
+  Cluster 2: 1 occurrences
+Top 10 clusters by appearance count:
+Cluster 5: 4 appearances
+Cluster 7: 4 appearances
+Cluster 0: 4 appearances
+Cluster 4: 4 appearances
+Cluster 3: 4 appearances
+Cluster 6: 4 appearances
+Cluster 1: 4 appearances
+Cluster 9: 4 appearances
+Cluster 8: 4 appearances
+Cluster 2: 4 appearances

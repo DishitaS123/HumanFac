@@ -1,0 +1,55 @@
+Word: vulnerability
+  Cluster 1360: 55 occurrences
+  Cluster 3644: 52 occurrences
+  Cluster 3996: 42 occurrences
+  Cluster 2081: 40 occurrences
+  Cluster 2942: 33 occurrences
+  Cluster 1132: 25 occurrences
+  Cluster 1726: 24 occurrences
+  Cluster 1494: 23 occurrences
+  Cluster 3136: 20 occurrences
+  Cluster 2378: 15 occurrences
+Word: security
+  Cluster 1583: 527 occurrences
+  Cluster 1969: 479 occurrences
+  Cluster 1537: 474 occurrences
+  Cluster 486: 446 occurrences
+  Cluster 3644: 384 occurrences
+  Cluster 348: 340 occurrences
+  Cluster 1156: 334 occurrences
+  Cluster 406: 319 occurrences
+  Cluster 1163: 301 occurrences
+  Cluster 1989: 291 occurrences
+Word: secure
+  Cluster 1163: 344 occurrences
+  Cluster 183: 144 occurrences
+  Cluster 129: 143 occurrences
+  Cluster 573: 122 occurrences
+  Cluster 1760: 114 occurrences
+  Cluster 4423: 107 occurrences
+  Cluster 103: 98 occurrences
+  Cluster 1981: 98 occurrences
+  Cluster 919: 96 occurrences
+  Cluster 1726: 94 occurrences
+Word: insecure
+  Cluster 129: 38 occurrences
+  Cluster 1132: 24 occurrences
+  Cluster 10: 17 occurrences
+  Cluster 2592: 17 occurrences
+  Cluster 1808: 16 occurrences
+  Cluster 2455: 11 occurrences
+  Cluster 1360: 10 occurrences
+  Cluster 133: 9 occurrences
+  Cluster 4298: 8 occurrences
+  Cluster 970: 7 occurrences
+Top 10 clusters by appearance count:
+Cluster 1360: 2 appearances
+Cluster 3644: 2 appearances
+Cluster 1132: 2 appearances
+Cluster 1726: 2 appearances
+Cluster 1163: 2 appearances
+Cluster 129: 2 appearances
+Cluster 3996: 1 appearances
+Cluster 2081: 1 appearances
+Cluster 2942: 1 appearances
+Cluster 1494: 1 appearances
