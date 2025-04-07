@@ -1,7 +1,10 @@
 # Ignore virtual environment
 venv/
 
+Deepseek-Test/
+
 # Ignore all JSON files
 *.json
 *.csv
+*.txt
 *.DS_Store
