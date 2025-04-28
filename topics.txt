@@ -99,10 +99,3 @@
 (98, '0.018*"install" + 0.014*"file" + 0.013*"run" + 0.013*"using" + 0.011*"version" + 0.011*"package" + 0.010*"use" + 0.009*"create" + 0.009*"following" + 0.009*"name"')
 (99, '0.036*"artio" + 0.031*"book" + 0.024*"rust" + 0.015*"d3" + 0.015*"gpu" + 0.014*"associated" + 0.012*"artios" + 0.012*"goddess" + 0.012*"energy" + 0.010*"celtic"')
 
-
-62 (62, '0.055*"discord" + 0.027*"malicious" + 0.022*"malware" + 0.020*"attacks" + 0.019*"attack" + 0.019*"injection" + 0.018*"attacker" + 0.015*"vulnerabilities" + 0.014*"vulnerability" + 0.012*"xss"')
-66 (66, '0.051*"memory" + 0.022*"process" + 0.017*"thread" + 0.014*"threads" + 0.013*"system" + 0.012*"cache" + 0.010*"agent" + 0.010*"lock" + 0.009*"cpu" + 0.009*"c"')
-92 (92, '0.024*"server" + 0.014*"service" + 0.012*"use" + 0.011*"using" + 0.009*"access" + 0.009*"azure" + 0.008*"client" + 0.007*"need" + 0.006*"security" + 0.006*"cloud"')
-99 (99, '0.036*"artio" + 0.031*"book" + 0.024*"rust" + 0.015*"d3" + 0.015*"gpu" + 0.014*"associated" + 0.012*"artios" + 0.012*"goddess" + 0.012*"energy" + 0.010*"celtic"')
-
-
