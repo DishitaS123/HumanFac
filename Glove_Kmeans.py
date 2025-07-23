@@ -53,12 +53,12 @@ def create_embeddings(conversations, glove_vocab):
 
 #OUR DATASET----------------------------------------------------------------------------
 #process glove vocab/embeddings for http://nlp.stanford.edu/data/glove.6B.zip:
-glove_embeddings_path = '/Users/dishita/Desktop/HumanFac_Data/glove.6B.100d.txt'
+glove_embeddings_path = 'EDIT/glove.6B.100d.txt'
 glove_vocab = load_glove_vocab(glove_embeddings_path)
 print("GloVe vocab loaded!")
 
 # load in our conversations dataset:
-df = pd.read_csv("/Users/dishita/Desktop/HumanFac_Data/NoDuplicates_Translated.csv")
+df = pd.read_csv("EDIT/NoDuplicates_Translated.csv")
 print("debug")
 df['words'] = df['vectorized_col_1'].apply(preprocess_text)
 print("Dataframe loaded!")
@@ -91,7 +91,7 @@ for i in range(k):
     #if the cluster number matches i, then we want to grab all the words (standalone)
     cluster_labels[i] = df[df['cluster_num'] == i]['words'].explode()
 
-#we want to get the top 10 words from each cluster to call a labe
+#we want to get the top 10 words from each cluster to call a label
 for cluster in cluster_labels:
     count_of_words = Counter(cluster_labels[cluster])
     top_10 = count_of_words.most_common(10)
