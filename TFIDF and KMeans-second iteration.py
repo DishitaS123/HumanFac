@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
-data = pd.read_csv('EDIT_HERE/relevant_rows_summarized.cs') 
+data = pd.read_csv('EDIT/relevant_rows_summarized.cs') 
 #This was run on the second dataset of 381 conversations, which allowed us to identify best practices for
 # our codebook
 
